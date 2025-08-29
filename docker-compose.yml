@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:17
+    restart: 'on-failure'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    restart: 'on-failure'
+    build: .
+    ports:
+      - '${PORT:-3000}:3000'
+    environment:
+      - DB_HOST=db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

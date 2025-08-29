@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: black;
+
+  overflow: hidden;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  color: white;
+}
+
+#posts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post {
+  padding: 5px;
+  border: solid 2px white;
+}
