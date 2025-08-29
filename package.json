@@ -13,6 +13,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "isomorphic-dompurify": "^2.26.0",
     "pg": "^8.16.3"
   }
 }

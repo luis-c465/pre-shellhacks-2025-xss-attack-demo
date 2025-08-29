@@ -1,5 +1,6 @@
 import { serve } from 'bun'
 import { Client } from 'pg'
+import DOMPurify from 'isomorphic-dompurify'
 import './styles.css'
 
 const db = new Client({
@@ -78,7 +79,7 @@ const server = serve({
 
         const query =
           'INSERT INTO POSTS (content) VALUES($1) ON CONFLICT (content) DO NOTHING;'
-        await db.query(query, [content])
+        await db.query(query, [DOMPurify.sanitize(content)])
 
         return Response.redirect('/')
       },
